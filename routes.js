@@ -133,10 +133,10 @@ module.exports = function (app) {
                 })
 
             }
-        } else {
+        } else {  
             DaGImage.find({ category: dataobject.dagcategory }, (err, DagImages) => {
                 if (DagImages.length != splitlist.length && !dataobject.removelist) console.log("Lists doesn't match in size");
-
+//test
                 DagImages.forEach((imageObject, index) => {
                     if (dataobject.removeimagelist) { splitlist[index] = "" }
 
