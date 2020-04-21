@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%=title%> </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <%- include('partials/nav')%>
+    <h3> <%=title%> </h3>
+
+<form method="POST">
+    <label for="name">Name: </label>
+    <input name="name" type="text"><br><br>
+
+    <label for="category">Category:</label>
+    <select id="category" name="dagcategory">
+        <% if(dagcategory){dagcategory.forEach((category, index)=>{ %>
+        <option value=<%=category %>><%=category %></option>
+        <% })} %>
+    </select>
+
+    <button type="submit">Send Image</button>
+</form>
+
+
+<%if (data){ %> 
+    <% data.name %><br>
+    <% data.category%><br>
+    
+    
+    <% } %> 
+
+</body>
+</html>

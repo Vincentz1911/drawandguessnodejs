@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%=title%> </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <%- include('partials/nav')%>
+    <h3> <%=title%> </h3>
+
+    <form method="POST">
+
+        <label for="category">Category:</label>
+        <select id="category" name="dagcategory">
+            <% if(datacat){datacat.forEach((dagcategory, index)=>{ %>
+            <option value=<%=dagcategory %>><%=dagcategory %></option>
+            <% })} %>
+        </select>
+
+        <label for="language">Language:</label>
+        <select id="language" name="daglanguage">
+            <% if(datalang){datalang.forEach((daglanguage, index)=>{ %>
+            <option value=<%=daglanguage %>><%=daglanguage %></option>
+            <% })} %>
+        </select>
+
+        <input type="checkbox" id="isimagelist" name="isimagelist" value=true>
+        <label for="isimagelist"> Is it Imagelist?</label>
+
+        <input type="checkbox" id="removeimagelist" name="removeimagelist" value=true>
+        <label for="removeimagelist"> Delete Imagelist / Translations?</label><br><br>
+
+        <textarea name="list" rows="10 " style="width:100%"></textarea><br>
+
+        <button type="submit">Perform</button>
+    </form>
+</body>
+
+</html>

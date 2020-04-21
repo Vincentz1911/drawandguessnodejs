@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%=title%> </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <%- include('partials/nav')%>
+    <h3> <%=title%> </h3>
+
+    <form method="POST">
+        <label for="category">Category:</label>
+        <select id="category" name="dagcategory">
+
+            <% if(dagcategory){dagcategory.forEach((category, index)=>{ %>
+            <option value=<%=category %> <% if (chosencategory == category) { %> selected <% } %>>
+                <%=category %>
+            </option>
+            <% })} %>
+
+        </select>
+        <button type="submit" name="action" value="formcat">Load Category</button>
+    </form>
+    <br><br>
+
+    <div class="grid" style="width:100%">
+
+        <% if(DagImages){ DagImages.forEach((dataobject, index, arr)=>{ %>
+
+        <div class="griditem">
+            <div>
+                <b style="font-size: large;"><%=dataobject.name %> </b> <br>
+                (<%=dataobject.category %>) <br>
+            </div>
+
+            <img src="<%=dataobject.image%>"> <br>
+
+            <div>
+                <form method="POST">
+                    EN: <input name="english" type="text" size="12" value=<%=dataobject.english%>><br>
+                    DE: <input name="german" type="text" size="12" value=<%=dataobject.german%>><br>
+                    FR: <input name="french" type="text" size="12" value=<%=dataobject.french%>><br>
+                    IT: <input name="italian" type="text" size="12" value=<%=dataobject.italian%>><br>
+                    ES: <input name="spanish" type="text" size="12" value=<%=dataobject.spanish%>><br>
+                    DA: <input name="danish" type="text" size="12" value=<%=dataobject.danish%>><br><br>
+                    <button type="submit" name="action" value=<%=dataobject.id%>>Update</button>
+                </form>
+            </div>
+        </div>
+        <% })} %>
+    </div>
+</body>

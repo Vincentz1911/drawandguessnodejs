@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%> </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <%- include('partials/nav')%>
+    <h3><%=title%></h3>
+
+    <form method="POST">
+
+        <label for="language">Language:</label>
+        <select id="language" name="daglanguage">
+            <% if(datalang){datalang.forEach((daglanguage, index)=>{ %>
+            <option value=<%=daglanguage %>><%=daglanguage %></option>
+            <% })} %>
+        </select>
+
+        <button type="submit">Extract translated resource string</button>
+    </form>
+
+    <% if (typeof datastring != 'undefined'){ %>
+    <textarea rows="30" style="width: 100%;"><%= datastring %></textarea>
+    <%} %>
+
+</body>
+
+</html>
