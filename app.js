@@ -28,5 +28,5 @@ require('./routes')(app);
 app.use(express.static('public'))
 
 //Sets port number to either the development port set in package.json or 3000, and starts the server
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8080
 app.listen(port, (err) => console.log(`serveren kører på port ${port}`))
