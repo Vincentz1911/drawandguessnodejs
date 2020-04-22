@@ -19,8 +19,8 @@ const mongoose = require('mongoose')
 const db = mongoose.connect(
     //"mongodb://localhost:27017/DrawAndGuess?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false", {
     "mongodb+srv://Vincentz1911:Pass1234@vincentz1911cluster-qy9xh.mongodb.net/DrawAndGuess?retryWrites=true&w=majority", {
-    // useNewUrlParser: true, 
-    // useUnifiedTopology: true 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true 
 })
 
 //Includes routes and public folder
