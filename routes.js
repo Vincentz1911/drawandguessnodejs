@@ -124,7 +124,9 @@ module.exports = function (app) {
                     const imageObject = new DaGImage({
                         name: imagename,
                         category: dataobject.dagcategory,
-                        image: encodeURI(`http://drawandguess.epizy.com/images/assets/${dataobject.dagcategory}/${imagename[0].toUpperCase()}${imagename.slice(1)}.png`),
+                        image: encodeURI(`./public/images/${dataobject.dagcategory}/${imagename[0].toUpperCase()}${imagename.slice(1)}.png`),
+ 
+                        // image: encodeURI(`http://drawandguess.epizy.com/images/assets/${dataobject.dagcategory}/${imagename[0].toUpperCase()}${imagename.slice(1)}.png`),
                         english: imagename
                     })
 
